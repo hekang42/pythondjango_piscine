@@ -4,9 +4,7 @@ from path import Path
 
 def do():
     dir_path = Path('.')
-    print(dir_path)
     new_path = dir_path / "text"
-    print(new_path)
     if not new_path.isdir():
         new_path.mkdir()
     new_file = new_path/'file.txt'
