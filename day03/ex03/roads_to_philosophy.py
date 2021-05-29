@@ -19,14 +19,13 @@ def roadsToPhilosophy(searchWord):
     except Exception as err:
         raise SystemExit(err)
 def walk():
-    
     try:
-        count = 0
+        count = 1
         wordList = []
         if len(sys.argv) != 2:
             raise InputError("Input is {} words".format(len(sys.argv) - 1))
         if sys.argv[1] == "Philosophy":
-            print("0 roads from Philosophy to philosophy !")
+            print("Philosophy\n0 roads from Philosophy to philosophy !")
             exit(0)
         searchWord = "wiki/" + sys.argv[1]
         while searchWord != '/wiki/Philosophy':
@@ -35,6 +34,7 @@ def walk():
                 raise Exception("It leads to an infinite loop !")
             else:
                 wordList.append(searchWord)
+            if count == 1 : print(sys.argv[1])
             count+=1
             print(searchWord.split("/")[2])
         print("{} roads from {} to philosophy !".format(count, sys.argv[1]))

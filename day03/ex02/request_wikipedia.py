@@ -19,7 +19,6 @@ def dataRequest():
         PARAMS = {
             "action": "parse",
             "page": searchWord,
-            "section": 1,
             "prop": "wikitext",
             "format": "json",
             "redirects": True
@@ -31,9 +30,9 @@ def dataRequest():
         wikitext = data['parse']['wikitext']["*"]
         destring = dewiki.from_string(wikitext)
 
-        destring = destring.replace("|","").replace("\n ","\n").replace("\n\n", "\t")
+        # destring = destring.replace("|","").replace("\n ","\n").replace("\n\n", "\t")
         
-        with open("./" + searchWord + ".wiki", 'w') as myfile:
+        with open("./" + searchWord.replace(' ', '_') + ".wiki", 'w') as myfile:
             myfile.write(destring)
             myfile.close
 
