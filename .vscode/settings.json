@@ -1,0 +1,5 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/Users/hekang/42Seoul/pythondjango_piscine/day03/ex01/library"]
+    // "python.pythonPath": "/Users/hekang/42Seoul/pythondjango_piscine/temp/bin/python3"
+}
