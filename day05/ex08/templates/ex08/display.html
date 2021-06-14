@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+    <table>
+      <tbody>
+        <tr>
+          <th>name</th>
+          <th>howeworld</th>
+          <th>climate</th>
+        </tr>
+        {% for human in people %}
+        <tr>
+          <td>{{ human.0 }}</td>
+          <td>{{ human.1 }}</td>
+          <td>{{ human.2 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

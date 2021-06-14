@@ -1,0 +1,72 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- 메뉴에서 가장 왼쪽, 모바일에서 표시되는 제목 -->
+    <div class="navbar-header">
+      <!-- 모바일때 표시되는 메뉴 버튼(PC 버젼에서는 보이지 않는다.) -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!-- 메뉴의 홈페이지 이름 -->
+      <a class="navbar-brand" href="{% url 'index' %}">Hello {{request.user.username}}!</a>
+</div>
+<!-- 메뉴의 리스트 -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- <ul class="nav navbar-nav">
+                Link 메뉴 (class가 active가 포함되어 있기 때문에 선택된 메뉴 뜻) -->
+      <!-- <li class="active">
+              <a href="#">Link <span class="sr-only">(current)</span></a>
+      </li> -->
+      <!-- Link 메뉴 -->
+      <!-- <li><a href="#">Link</a></li> -->
+      <!-- DropDown 형식의 메뉴 -->
+      <!-- <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                      aria-haspopup="true" aria-expanded="false">Dropdown <span
+                              class="caret"></span></a>
+              <ul class="dropdown-menu">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li role="separator" class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+              </ul>
+      </li> -->
+      <!-- </ul> -->
+      <!-- 검색 메뉴 -->
+      <!-- <form class="navbar-form navbar-left">
+              <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+      </form> -->
+      <!-- 오른쪽 정렬의 메뉴 -->
+      <ul class="nav navbar-nav navbar-right">
+              <!-- Link 메뉴 -->
+              <!-- <li><a href="#">Link</a></li> -->
+              <!-- DropDown 형식의 메뉴 -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                      aria-haspopup="true" aria-expanded="false">Menu <span
+                        class="caret"></span></a>
+              <ul class="dropdown-menu">
+                {% if user.is_authenticated %}
+                  <li><a href="{% url 'logout' %}">Log-out</a></li>
+                {% else %}
+                  <li><a href="{% url 'login' %}">Log-in</a></li>
+                  <li><a href="{% url 'registration' %}">Registration</a></li>
+                {% endif %}
+                {% comment %} <li><a href="#">Something else here</a></li> {% endcomment %}
+                <!-- <li role="separator" class="divider"></li>
+<li><a href="#">Separated link</a></li> -->
+              </ul>
+            </li>
+      </ul>
+    </div>
+  </div>
+</nav>

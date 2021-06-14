@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>update</title>
+  </head>
+  <body>
+  
+    <form action="" method="POST">
+    {% csrf_token %}
+
+    {{ UpdateForm.as_table }}
+    <input type="submit" value="submit">
+    
+    </form> 
+    <!-- {% comment %} <br><br>
+      <select name="delete_title">
+          {% for title in movies %}
+            <option value={{title.1}}>{{title.0}}</option>
+          {% endfor %}
+      </select>
+      <input type="submit" value="submit">
+      {% endcomment %} -->
+  </body>
+</html>

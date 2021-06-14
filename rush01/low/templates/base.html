@@ -1,0 +1,40 @@
+{% load static %} {% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BitCoin</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <style>
+        #login_form label {
+            display: none;
+            }
+        
+        .nav li:hover{
+            background-color: black;
+        }
+        body {
+            background: rgb(217,169,82)
+        }
+    </style>
+</head>
+<body >
+<div style="background-image: url('https://www.google.com/url?sa=i&url=http%3A%2F%2Fm.coinreaders.com%2F10869&psig=AOvVaw0i7pQyqMUnAoX5fAjq3ZuD&ust=1623173456148000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOj2tbyGhvECFQAAAAAdAAAAABAD');">
+        {% bootstrap_messages %}
+<div class='container'>
+    <a href="{% url 'index' %}"><h2 style="display: inline-block; color:black">Doge <h3 style="display: inline-block; margin-left:1vw; color:rgb(125,125,125);" > to the Moon</h3></h2></a>
+    {% include 'nav.html' %}
+</div>
+
+<div class="container">
+    {% block content %}
+    {% endblock content %}
+</div>
+</div>
+</body>
+</html>

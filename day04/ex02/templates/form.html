@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="post" method="post">
+            {% csrf_token %}
+             {{ form.as_p }}
+            <input type="submit" value="submit" name="submit" style="margin-left:130px">
+        </form>
+        <hr>
+        {% block history %}
+        {% endblock %}
+    </body>
+</html>

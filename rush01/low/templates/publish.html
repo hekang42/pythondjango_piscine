@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}Publish | {% endblock %}
+
+{% block content %}
+<div>
+  <h1>Publish</h1>
+  <form action="{% url 'publish' %}" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <button type="submit" class="btn btn-success" >OK</button>
+    <button type="reset" class="btn btn-default" >Cancle</button>
+    <!-- {% buttons submit='OK' reset="Cancle" %}{% endbuttons %} -->
+  </form>
+</div>
+{% endblock content %}

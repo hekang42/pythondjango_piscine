@@ -1,0 +1,59 @@
+{% extends 'base.html' %} {% load bootstrap3 %}
+
+{% block title %}{{ object.title }} | {% endblock title %}
+
+{% block content %}
+<div>
+  <h1>{{ object.title }}</h1>
+  <div style="display: flex; justify-content: space-between;">
+    <div>
+      <h3 style="display: inline-flex; color: rgb(125, 125, 125)">
+        {{ object.author }}
+      </h3>
+      <h5 style="display: inline-flex">- {{ object.created }}</h5>
+    </div>
+    {% if user.is_authenticated %}
+    <form style="display: inline-flex; 	align-self: center;" action="{% url 'favourite' %}" method="post" class="form">
+      {% csrf_token %}
+      {% bootstrap_form favouriteForm %}
+      {% buttons submit='🔖' %}{% endbuttons %}
+    </form>
+    {% endif %}
+  </div>
+  <hr />
+  <div class="lead">
+    <blockquote>{{ object.synopsis }}</blockquote>
+    <div>{{ object.content }}</div>
+  </div>
+  {% if user.is_authenticated %}
+
+  <form method="post" class="form" action="{% url 'create_comment' article.id %}">
+    {% csrf_token %}
+    {% bootstrap_form comment_form %}
+    {% buttons submit='OK' reset="Cancel" %}{% endbuttons %}    
+  </form>
+        {% endif %}
+
+  {% for reple in article.comment_set.all %}
+    <div style="margin-left:30px">
+      <p><h4> {{reple}}</h4></p><p><h6>{{reple.author}}</h6></p>
+      <p><h6>{{reple.create_date}}</h6></p>
+      <hr>
+
+        {% for r in reple.recomment_set.all %}
+        <div style="margin-left:60px">
+          <p><h4> {{r}}</h4></p><p><h6>{{r.author}}</h6></p>
+          <p><h6>{{r.create_date}}</h6></p>
+        </div>
+        {% endfor %}
+        {% if user.is_authenticated %}
+        <form method="post" class="form" action="{% url 'recomment' article.id reple.id %}" style="margin-left:30px">
+          {% csrf_token %}
+          {% bootstrap_form comment_form %}
+          {% buttons submit='OK' reset="Cancel" %}{% endbuttons %}    
+        </form> 
+        {% endif %}
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
