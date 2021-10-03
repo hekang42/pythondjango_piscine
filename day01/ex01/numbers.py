@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def my_numbers():
     myfile = open("numbers.txt", 'r')
     lines = myfile.readline()

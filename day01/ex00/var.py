@@ -1,13 +1,22 @@
+#!/usr/bin/python3
 def my_var():
-    print("42 has a type", type(42))
-    print("42 has a type", type("42"))
-    print("quarante-deux has a type", type("quarante-deux"))
-    print("42.0 has a type", type(42.0))
-    print("True has a type", type(True))
-    print("[42] has a type", type([42]))
-    print("{42: 42} has a type", type({42: 42}))
-    print("(42,) has a type", type((42,)))
-    print("set() has a type", type(set()))
-
-if __name__ == '__main__': my_var()
-
+    type_int = 42
+    type_str = "42"
+    type_str2 = "quarante-deux"
+    type_float = 42.0
+    type_bool = True
+    type_list = [42]
+    type_dict = {42: 42}
+    type_tuple = (42,)
+    type_set = set()
+    print("{} has a type {}".format(type_int, type(type_int)))
+    print("{} has a type {}".format(type_str, type(type_str)))
+    print("{} has a type {}".format(type_str2, type(type_str2)))
+    print("{} has a type {}".format(type_float, type(type_float)))
+    print("{} has a type {}".format(type_bool, type(type_bool)))
+    print("{} has a type {}".format(type_list, type(type_list)))
+    print("{} has a type {}".format(type_dict, type(type_dict)))
+    print("{} has a type {}".format(type_tuple, type(type_tuple)))
+    print("{} has a type {}".format(type_set, type(type_set)))
+if __name__ == '__main__': 
+    my_var()

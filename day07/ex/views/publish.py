@@ -19,7 +19,7 @@ class Publish(LoginRequiredMixin, FormView):
 
     def form_valid(self, form: PublishForm):
         title = form.cleaned_data['title']
-        synopsis = form.cleaned_data['synopsiws']
+        synopsis = form.cleaned_data['synopsis']
         content = form.cleaned_data['content']
         try:
             Article.objects.create(

@@ -17,15 +17,26 @@ class Profile(LoginRequiredMixin, FormView):
     success_url = reverse_lazy('profile')
 
     def get_initial(self):
-        user = models.Profile.objects.get(user_id=self.request.user.id)
-        self.initial = {
-            "name": user.name,
-            "surname": user.surname,
-            "email": user.email,
-            "description": user.description,
-            "picture": user.picture,
-        }
-        return self.initial.copy()
+        try:
+            user = models.Profile.objects.get(user_id=self.request.user.id)
+            self.initial = {
+                "name": user.name,
+                "surname": user.surname,
+                "email": user.email,
+                "description": user.description,
+                "picture": user.picture,
+            }
+            return self.initial.copy()
+        except Exception as e:
+            models.Profile.objects.create(
+                user=self.request.user,
+                name="",
+                surname="",
+                email="",
+                description="",
+                picture=None
+            )
+            redirect('profile')
     def form_valid(self, form):
         profile = form.save(commit=False)
         profile.user_id = self.request.user.id

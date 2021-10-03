@@ -18,6 +18,7 @@ services:
     container_name : nginx_service
     volumes: 
       - ./conf.d/:/etc/nginx/conf.d
+      - ./media:/media
       - ./.static_root/:/static
     ports:
       - "80:80"

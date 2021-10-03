@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import sys
 
 def capital_city(states, capital_cities, state_tofind):

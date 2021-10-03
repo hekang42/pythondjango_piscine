@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def my_dictionary():
     d=[
     ('Hendrix' , '1942'),
@@ -14,8 +15,9 @@ def my_dictionary():
     ('Burton' , '1939')]
     dictionary = {}
     for b, a in d:
+        if a in dictionary.keys():
+            b = dictionary[a] + " "+ b
         dictionary[a] = b
-    # dictionary
     for a, b in dictionary.items():
         print("{} : {}".format(a, b))
 

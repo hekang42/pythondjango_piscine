@@ -19,10 +19,10 @@
           <a href="{% url 'index' %}" style="padding:0%;margin-left:5px">
               <span style="margin-left:-22px; font-size:20px" class="glyphicon glyphicon-bitcoin" aria-hidden="true"></span><span class="sr-only">(current)</span></a>
       </li>
+     {% if user.is_authenticated %}
       <li>
           <a href="{% url 'articles' %} ">Articles <span class="sr-only"></span></a>
       </li>
-      {% if user.is_authenticated %}
       <li >
         <a href="{% url 'publish' %}">Publish <span class="sr-only"></span></a>
       </li>
