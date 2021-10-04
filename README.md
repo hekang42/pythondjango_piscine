@@ -9,3 +9,6 @@ Your investment on both weeks: you can’t validate the piscine if you work only
 Trying to turn in every day: even if something isn’t finished, it’s better to try and turn it in
 At least one weekend of work: going into the piscine shouldn’t be taken lightly. We expect you to validate at least one of the two rushes.
 After the end of the piscine, you have two weeks to do all the required peerevaluations
+<img width="213" alt="image" src="https://user-images.githubusercontent.com/42266439/135777890-99dec2cf-2a54-46ae-89e4-f0dff531e524.png">
+
+<img width="213" alt="image" src="https://user-images.githubusercontent.com/42266439/135777851-7c3bac13-83ae-4cb5-8350-878a9e99f7e6.png">
